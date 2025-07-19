@@ -1,9 +1,22 @@
 /*
-Answer: What are the top skills based on salary?
-- Look at the average salary associated with each skill for Data Analyst positions
-- Focuses on roles with specified salaries, regardless of location
-- Why? It reveals how different skills impact salary levels for Data Analysts and 
-    helps identify the most financially rewarding skills to acquire or improve
+===============================================================================
+Question: What are the top-paying skills for remote Data Analyst roles?
+===============================================================================
+
+Objective:
+To identify which technical skills are associated with the highest average 
+salaries among remote Data Analyst positions.
+
+- Focuses only on remote jobs with the title 'Data Analyst'
+- Calculates average annual salary per skill
+- Ranks the top 25 skills based on salary
+
+Purpose:
+This query helps job seekers prioritize which technical skills may offer 
+greater financial returns. It’s particularly useful for professionals planning 
+to upskill or pivot into high-paying areas of data analytics.
+
+===============================================================================
 */
 
 SELECT 
@@ -15,7 +28,7 @@ INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
     job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
-    AND job_work_from_home = True 
+    AND job_work_from_home = TRUE
 GROUP BY
     skills
 ORDER BY
@@ -23,111 +36,48 @@ ORDER BY
 LIMIT 25;
 
 /*
-Here's a breakdown of the results for top paying skills for Data Analysts:
-- High Demand for Big Data & ML Skills: Top salaries are commanded by analysts skilled in big data technologies (PySpark, Couchbase), machine learning tools (DataRobot, Jupyter), and Python libraries (Pandas, NumPy), reflecting the industry's high valuation of data processing and predictive modeling capabilities.
-- Software Development & Deployment Proficiency: Knowledge in development and deployment tools (GitLab, Kubernetes, Airflow) indicates a lucrative crossover between data analysis and engineering, with a premium on skills that facilitate automation and efficient data pipeline management.
-- Cloud Computing Expertise: Familiarity with cloud and data engineering tools (Elasticsearch, Databricks, GCP) underscores the growing importance of cloud-based analytics environments, suggesting that cloud proficiency significantly boosts earning potential in data analytics.
+===============================================================================
+Top 25 Highest-Paying Skills for Remote Data Analysts
+===============================================================================
 
-[
-  {
-    "skills": "pyspark",
-    "avg_salary": "208172"
-  },
-  {
-    "skills": "bitbucket",
-    "avg_salary": "189155"
-  },
-  {
-    "skills": "couchbase",
-    "avg_salary": "160515"
-  },
-  {
-    "skills": "watson",
-    "avg_salary": "160515"
-  },
-  {
-    "skills": "datarobot",
-    "avg_salary": "155486"
-  },
-  {
-    "skills": "gitlab",
-    "avg_salary": "154500"
-  },
-  {
-    "skills": "swift",
-    "avg_salary": "153750"
-  },
-  {
-    "skills": "jupyter",
-    "avg_salary": "152777"
-  },
-  {
-    "skills": "pandas",
-    "avg_salary": "151821"
-  },
-  {
-    "skills": "elasticsearch",
-    "avg_salary": "145000"
-  },
-  {
-    "skills": "golang",
-    "avg_salary": "145000"
-  },
-  {
-    "skills": "numpy",
-    "avg_salary": "143513"
-  },
-  {
-    "skills": "databricks",
-    "avg_salary": "141907"
-  },
-  {
-    "skills": "linux",
-    "avg_salary": "136508"
-  },
-  {
-    "skills": "kubernetes",
-    "avg_salary": "132500"
-  },
-  {
-    "skills": "atlassian",
-    "avg_salary": "131162"
-  },
-  {
-    "skills": "twilio",
-    "avg_salary": "127000"
-  },
-  {
-    "skills": "airflow",
-    "avg_salary": "126103"
-  },
-  {
-    "skills": "scikit-learn",
-    "avg_salary": "125781"
-  },
-  {
-    "skills": "jenkins",
-    "avg_salary": "125436"
-  },
-  {
-    "skills": "notion",
-    "avg_salary": "125000"
-  },
-  {
-    "skills": "scala",
-    "avg_salary": "124903"
-  },
-  {
-    "skills": "postgresql",
-    "avg_salary": "123879"
-  },
-  {
-    "skills": "gcp",
-    "avg_salary": "122500"
-  },
-  {
-    "skills": "microstrategy",
-    "avg_salary": "121619"
-  }
-]
+Skill           | Avg. Salary (USD)
+-------------------------------------
+pyspark         | $208,172
+bitbucket       | $189,155
+couchbase       | $160,515
+watson          | $160,515
+datarobot       | $155,486
+gitlab          | $154,500
+swift           | $153,750
+jupyter         | $152,777
+pandas          | $151,821
+elasticsearch   | $145,000
+golang          | $145,000
+numpy           | $143,513
+databricks      | $141,907
+linux           | $136,508
+kubernetes      | $132,500
+atlassian       | $131,162
+twilio          | $127,000
+airflow         | $126,103
+scikit-learn    | $125,781
+jenkins         | $125,436
+notion          | $125,000
+scala           | $124,903
+postgresql      | $123,879
+gcp             | $122,500
+microstrategy   | $121,619
+
+Insights:
+- Big Data & ML: Skills like PySpark, DataRobot, Pandas, and Jupyter are top 
+  earners, reflecting high demand for data processing and predictive modeling.
+- DevOps & Deployment: Tools like GitLab, Kubernetes, and Airflow signal 
+  that engineering and automation skills boost compensation.
+- Cloud Platforms: Proficiency in Elasticsearch, GCP, and Databricks shows 
+  that cloud-native skills are highly valued in today’s analytics roles.
+
+These findings can guide upskilling decisions by highlighting the most 
+financially rewarding areas in the data analytics field.
+
+===============================================================================
 */
