@@ -1,10 +1,22 @@
 /*
-Question: What are the most in-demand skills for data analysts?
-- Join job postings to inner join table similar to query 2
-- Identify the top 5 in-demand skills for a data analyst.
-- Focus on all job postings.
-- Why? Retrieves the top 5 skills with the highest demand in the job market, 
-    providing insights into the most valuable skills for job seekers.
+===============================================================================
+Question: Which skills are most in demand for remote Data Analyst roles?
+===============================================================================
+
+Objective:
+To identify the top skills that appear most frequently in remote Data Analyst 
+job postings. This helps uncover the technical competencies most valued in 
+the current job market.
+
+- Analyzes all remote job postings for the 'Data Analyst' role
+- Counts frequency of each required skill
+- Ranks the top 5 most in-demand skills
+
+Purpose:
+This query provides job seekers and career switchers with a focused list of 
+high-demand skills that can improve employability and align with market needs.
+
+===============================================================================
 */
 
 SELECT 
@@ -15,7 +27,7 @@ INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
     job_title_short = 'Data Analyst' 
-    AND job_work_from_home = True 
+    AND job_work_from_home = TRUE
 GROUP BY
     skills
 ORDER BY
@@ -23,30 +35,28 @@ ORDER BY
 LIMIT 5;
 
 /*
-Here's the breakdown of the most demanded skills for data analysts in 2023
-SQL and Excel remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
-Programming and Visualization Tools like Python, Tableau, and Power BI are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
+===============================================================================
+Top 5 Most In-Demand Skills for Remote Data Analysts
+===============================================================================
 
-[
-  {
-    "skills": "sql",
-    "demand_count": "7291"
-  },
-  {
-    "skills": "excel",
-    "demand_count": "4611"
-  },
-  {
-    "skills": "python",
-    "demand_count": "4330"
-  },
-  {
-    "skills": "tableau",
-    "demand_count": "3745"
-  },
-  {
-    "skills": "power bi",
-    "demand_count": "2609"
-  }
-]
+Skill       | Demand Count
+----------------------------
+SQL         | 7,291
+Excel       | 4,611
+Python      | 4,330
+Tableau     | 3,745
+Power BI    | 2,609
+
+Insights:
+- SQL and Excel are fundamental for remote data roles, especially in data 
+  querying and spreadsheet analysis.
+- Python and Tableau highlight the demand for programming and visualization 
+  capabilities.
+- Power BI reflects growing interest in Microsoft’s ecosystem for business 
+  intelligence and reporting.
+
+These insights can help guide professionals in skill development and focus 
+their learning path to match industry needs.
+
+===============================================================================
 */
