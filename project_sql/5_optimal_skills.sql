@@ -1,22 +1,11 @@
 /*
-===============================================================================
-Question: Which skills are both in high demand and offer high salaries for remote Data Analyst roles?
-===============================================================================
+Question: Which skills are both in high demand and highly paid for remote Data Analyst roles?
 
-Objective:
-To identify the most optimal technical skills for Data Analysts by combining 
-both job market demand and average salary data.
+- Uses remote Data Analyst jobs with salary data
+- Combines skill frequency with average salary
+- Ranks top skills with strong demand and pay
 
-- Focuses on remote 'Data Analyst' job postings with available salary data
-- Aggregates skill frequency and calculates average salary
-- Ranks skills that are both in demand and well-compensated
-
-Purpose:
-This query helps professionals target skills that provide both job 
-opportunities and strong earning potential, supporting strategic decisions 
-for career advancement in data analytics.
-
-===============================================================================
+Goal: Highlight the most valuable skills for career growth in data analytics.
 */
 
 SELECT 
