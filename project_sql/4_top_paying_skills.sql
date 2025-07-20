@@ -1,22 +1,11 @@
 /*
-===============================================================================
 Question: What are the top-paying skills for remote Data Analyst roles?
-===============================================================================
 
-Objective:
-To identify which technical skills are associated with the highest average 
-salaries among remote Data Analyst positions.
+- Uses remote Data Analyst jobs with salary data
+- Calculates average salary per skill
+- Ranks the top 25 skills by pay
 
-- Focuses only on remote jobs with the title 'Data Analyst'
-- Calculates average annual salary per skill
-- Ranks the top 25 skills based on salary
-
-Purpose:
-This query helps job seekers prioritize which technical skills may offer 
-greater financial returns. It’s particularly useful for professionals planning 
-to upskill or pivot into high-paying areas of data analytics.
-
-===============================================================================
+Goal: Reveal which skills bring the highest earnings in remote analytics roles.
 */
 
 SELECT 
