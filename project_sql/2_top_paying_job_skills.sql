@@ -1,24 +1,12 @@
 /*
-===============================================================================
-Question: What skills are most commonly required for the highest-paying 
-remote Data Analyst positions?
-===============================================================================
+Question: What skills are most needed in top-paying remote Data Analyst jobs?
 
-Objective:
-To answer this, we’ll analyze the top-paying remote Data Analyst roles and 
-identify the specific technical skills required for each position.
+- Uses high-paying remote roles with salary info
+- Joins skill data to link jobs with required skills
 
-- Builds on a previous query selecting the highest-paying remote roles
-- Joins skill datasets to associate each job with its required skills
-- Focuses on remote jobs with available salary data
-
-Purpose:
-This query highlights which technical skills are most frequently requested
-in high-paying Data Analyst job listings, helping professionals understand 
-which tools and languages are most valued in the market.
-
-===============================================================================
+Goal: Reveal top-valued technical skills in high-paying analyst roles.
 */
+
 
 WITH top_paying_jobs AS (
     SELECT	
