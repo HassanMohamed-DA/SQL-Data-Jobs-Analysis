@@ -1,24 +1,14 @@
 /*
-===============================================================================
-Question: What are the highest-paying remote Data Analyst job opportunities?
-===============================================================================
+Question: What are the highest-paying remote Data Analyst roles?
 
-Objective:
-To answer this question, we will query job postings data to identify remote 
-Data Analyst roles with the highest reported average annual salaries.
+- Remote only (job_location = 'Anywhere')
+- Salary data must be available
+- Shows employer names
 
-- Excludes job postings with missing salary information
-- Filters for remote positions only (job_location = 'Anywhere')
-- Includes employer names for additional context
-
-Purpose:
-This analysis highlights the most lucrative remote opportunities for Data Analysts. 
-offering insight into employer demand, compensation trends, and role diversity.
-
-===============================================================================
+Goal: Find top-paying remote roles and salary trends.
 */
 
--- Query: Highest-Paying Remote Data Analyst Roles
+
 SELECT	
 	job_id,
 	job_title,
